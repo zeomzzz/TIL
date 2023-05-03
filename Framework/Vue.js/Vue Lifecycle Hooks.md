@@ -1,4 +1,4 @@
-#### **Vue Lifecycle Hooks**
+### **Vue Lifecycle Hooks**
 
 <br>
 
