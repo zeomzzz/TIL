@@ -19,6 +19,40 @@
 
 -   전체 간선 중 가장 가중치가 작은 것부터 연결
 -   Union-Find 이용
+-   코드
+
+```
+# 특정 원소가 속한 집합을 찾기
+def find-set(x) :
+	if x != p[x] :
+    	p[x] = find-set(p[x])
+    return p[x]
+
+# 두 집합을 합치기
+def union(x, y) :
+	p[find-set(y)] = find-set(x)
+
+# 간선 정보 입력 받기
+# 비용순 정렬을 위해 w가 튜플의 첫 번째 원소가 되도록
+edges = []
+edges.sort()
+
+# 초기화 : 부모가 자기 자신
+parent = [0] * (v + 1)
+for i in range(1, v + 1) :
+	parent[i] = i
+
+# 가중치 적은 간선부터 확인해서, 사이클 발생하지 않는 경우에 union 및 선택
+for edge in edges :
+	cost, a, b = edge
+    if find-set(x) != find-set(y) :
+    	union(x, y)
+        result += w
+
+print(result)
+```
+<br>
+<br>
 
 <br>
 <br>
@@ -63,4 +97,5 @@ while heap :
 
 <br>
 
+- [19강 - 크루스칼 알고리즘(Kruskal Algorithm) \[ 실전 알고리즘 강좌(Algorithm Programming Tutorial) #19 \]](https://www.youtube.com/watch?v=LQ3JHknGy8c)
 -   [코딩테스트 알고리즘 - 9. MST](https://youtu.be/nZ4RTuoHS_Y)
