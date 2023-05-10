@@ -9,6 +9,7 @@
 -   Spanning Tree : 모든 노드가 연결된 트리
 -   MST : 각 간선에 가중치가 있다고 할 때, 최소의 비용으로 모든 노드가 연결된 트리
 -   알고리즘 : Kruskal or Prim
+    -   그래프 내의 간선 숫자가 적은 sparse graph에서는 Kruskal, 간선 숫자가 많은 dense graph에서는 Prim이 적합
 
 <br>
 <br>
@@ -19,6 +20,7 @@
 
 -   전체 간선 중 가장 가중치가 작은 것부터 연결
 -   Union-Find 이용
+-   시간 복잡도 : `O(e log2e)`
 -   코드
 
 ```
@@ -63,7 +65,7 @@ print(result)
 
 -   현재 노드에 연결된 간선 중 가장 가중치가 작은 것을 추가
 -   heap 이용 (최소 heap) : 노드에 연결된 간선 중 가중치가 최소인 간선이 가장 위로 올라옴
--   시간 복잡도 : `O(E log E)`
+-   시간 복잡도 : `O(n^2)`
 -   코드
 
 ```
@@ -99,3 +101,4 @@ while heap :
 
 - [19강 - 크루스칼 알고리즘(Kruskal Algorithm) \[ 실전 알고리즘 강좌(Algorithm Programming Tutorial) #19 \]](https://www.youtube.com/watch?v=LQ3JHknGy8c)
 -   [코딩테스트 알고리즘 - 9. MST](https://youtu.be/nZ4RTuoHS_Y)
+-   [Kruskal, Prim 알고리즘](https://keepdev.tistory.com/82)
