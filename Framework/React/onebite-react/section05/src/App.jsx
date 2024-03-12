@@ -2,6 +2,7 @@ import './App.css'
 import Header from './components/Header.jsx';
 import Main from './components/Main';
 import Footer from './components/Footer';
+import Button from './components/Button';
 
 // 화살표 함수로 만들기
 // const Header = () => {
@@ -21,12 +22,24 @@ import Footer from './components/Footer';
 //   )
 // }
 
+const buttonProps = {
+  text : "메일",
+  color : "red",
+  a : 1,
+  b : 2,
+  c : 3
+}
+
 function App() {
   return (
     <>
-      <Header />
-      <Main />
-      <Footer />
+      {/* <Button text={"메일"} color={"red"}/> */}
+      <Button {...buttonProps} /> {/* 스프레드 연산자 이용 */}
+      <Button text={"카페"}/>
+      <Button text={"블로그"}>
+        {/* <div>자식요소</div> */}
+        <Header />
+      </Button>
     </>
   );
 }
