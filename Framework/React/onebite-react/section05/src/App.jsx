@@ -3,7 +3,29 @@ import './App.css'
 // import Main from './components/Main';
 // import Footer from './components/Footer';
 // import Button from './components/Button';
-import {useState} from "react";
+// import {useState} from "react";
+// import Bulb from './components/Bulb';
+// import Counter from './components/Counter';
+import Register from './components/Register';
+
+// const Bulb = () => {
+//   const [light, setLight] = useState("OFF");
+
+//   return (
+//     <div>
+//       {light === "ON" ? (
+//           <h1 style={{ backgroundColor: "orange"}}>ON</h1>
+//         ) : (
+//           <h1 style={{ backgroundColor: "gray"}}>OFF</h1>
+//       )}
+//       <button onClick={()=> {
+//         setLight(light === "ON" ? "OFF" : "ON");
+//         }}
+//       >
+//       {light === "ON" ? "끄기" : "켜기"}</button>
+//     </div>
+//   );
+// }
 
 // 화살표 함수로 만들기
 // const Header = () => {
@@ -46,30 +68,44 @@ const buttonProps = {
 // }
 
 // State
+// count 값이 바뀌면 Bulb 컴포넌트도 리렌더링 됨
+// 왜냐하면 부모컴포넌트인 App 컴포넌트가 리렌더링 되어서
+// 따라서 컴포넌트를 분리
+// const Counter = () => {
+//   const [count, setCount] = useState(0); // 보통 구조분해 할당해서 받음
+
+//   return (
+//     <div>
+//       <h1>{count}</h1>
+//       <button
+//         onClick={() => {
+//           setCount(count + 1); // 클릭할 때마다 state 값이 1 씩 증가 -> 이것이 화면에 반영됨(리렌더링)
+//         }}
+//       >
+//         +
+//       </button>
+//     </div>
+//   )
+// }
+
 function App() {
-  // const state = useState(0); // 인수로 state의 초기값을 받음
-  const [count, setCount] = useState(0); // 보통 구조분해 할당해서 받음
-  const [light, setLight] = useState("OFF");
-  console.log(count);
 
   return (
     <>
-      <div>
-        <h1>{light}</h1>
-        <button onClick={()=> {
-          setLight(light === "ON" ? "OFF" : "ON");
-        }}
-        >
-          {light === "ON" ? "끄기" : "켜기"}</button>
-      </div>
-      <h1>{count}</h1>
-      <button onClick={() => {
-        setCount(count + 1); // 클릭할 때마다 state 값이 1 씩 증가 -> 이것이 화면에 반영됨(리렌더링)
-      }}>
-        +
-      </button>
+      <Register />
     </>
   );
 }
+
+// function App() {
+//   // const state = useState(0); // 인수로 state의 초기값을 받음
+
+//   return (
+//     <>
+//       <Bulb />
+//       <Counter />
+//     </>
+//   );
+// }
 
 export default App;
