@@ -1,4 +1,4 @@
-import {useState} from "React";
+import {useState, useRef} from "React";
 // 간단한 회원가입 폼
 // 1. 이름 2. 생년월일 3. 국적 4. 자기소개
 
@@ -14,13 +14,31 @@ const Register = () => {
         bio: ""
     })
 
-    console.log(input);
+    const countRef = useRef(0);
+    const inputRef = useRef(0);
+
+    // let count = 0;
+    // console.log(refObj); // current에 저장됨
+    // console.log(refObj.current);
+    // console.log("Register 렌더링");
 
     const onChange = (e) => {
+        countRef.current++;
+        console.log(countRef.current);
+        // count ++;
+        // console.log(count); // 1로 고정 -> 리렌더링 될 때 count가 계속 0으로 리셋됨
         setInput({
             ...input,
             [e.target.name]: e.target.value
         });
+    }
+
+    const onSubmit = () => {
+        if(input.name === "") {
+            // 이름을 입력하는 DOM 요소에 포커스
+            // console.log(inputRef.current);
+            inputRef.current.focus();
+        }
     }
 
     // const onChangeName = (e) => {
@@ -60,6 +78,7 @@ const Register = () => {
         <div>
             <div>
                 <input
+                    ref={inputRef}
                     name="name"
                     // value={name} // 초기값 설정
                     value={input.name}
@@ -99,6 +118,8 @@ const Register = () => {
                     // onChange={onChangeBio}
                     onChange={onChange}/>
             </div>
+
+            <button onClick={onSubmit}>제출</button>
         </div>
     );
 };
