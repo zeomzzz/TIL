@@ -7,6 +7,7 @@ import './App.css'
 // import Bulb from './components/Bulb';
 // import Counter from './components/Counter';
 import Register from './components/Register';
+import HookExam from './components/HookExam';
 
 // const Bulb = () => {
 //   const [light, setLight] = useState("OFF");
@@ -92,9 +93,15 @@ function App() {
 
   return (
     <>
-      <Register />
+      <HookExam />
     </>
   );
+
+  // return (
+  //   <>
+  //     <Register />
+  //   </>
+  // );
 }
 
 // function App() {
